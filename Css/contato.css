@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+.cabecalho {
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.contato {
+    background: url(../Imagens/negocio.jpg) no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contato h1 {
+    font-size: 4rem;
+    color: #F25757;
+    font-family: 'New Tegomin', serif;
+}
+
+.contato h2 {
+    font-size: 1.5rem;
+    max-width: 700px;
+    color: white;
+    font-family: serif;
+}
+
+@media (max-width: 850px){
+    .contato h1 {
+        font-size: 2.5rem;
+    }
+
+    .contato h2 {
+        max-width: 600px;
+    }
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    
+    background: linear-gradient(to right, #F25757, #1C5C5D);
+    
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 50px;
+    margin-top: -25px;
+    width: 100%;
+}
+
+.formulario h2 {
+    font-size: 2.8rem;
+    color: white;
+    margin-top: 35px;
+    font-family: 'New Tegomin', serif;
+}
+
+.formulario input {
+    width: 450px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.formulario textarea#desc {
+    width: 450px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-bottom: 5px
+    
+}
+
+.formulario .btn {
+    width: 450px;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: #F25757;
+    border: none;
+}
+
+.formulario .btn:hover {
+    background-color: #1C5C5D;
+}
+
+
+
+@media (max-width: 700px){
+    .contato h1 {
+        font-size: 2rem;    
+    }
+
+    .contato h2 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,89 @@
+INSTALANDO O COMPOSER
+
+passo: a passo para instalar o composer e usar
+1-passo: instalar o composer por esse link: https://getcomposer.org/
+2-passo: na pasta do projeto criar o arquivo composer.json e colar o require
+3-passo: baixar o arquivo composer.phar e colar no projeto atraves do site https://packagist.org/
+4-passo: instalar o composer no diretorio colar esse codigo no composer.json
+{
+    "require": {
+       
+    }
+}
+5-passo: abre o cmd na pasta do projeto e instala esse arquivo: php composer.phar install 
+6-passo: instalar o twig no cmd na pasta do proejto com esse comando: composer require twig/twig
+7-passo: acessar o site packagist.org e copiar o comando e colar no arquivo composer.json
+no caso aqui foi usado o twig/twig
+{
+    "require": {
+       "twig/twig": "^3.0"
+    }
+}
+8-passo: no site https://packagist.org/ no campo de pesquisa coloca 
+twig clica no twig/twig la em baixo vai ter documentatition no leia-me clica, 
+depois twig for developers e copia o codigo e coloca na controller, 
+esse comando. link para acessa direto https://twig.symfony.com/doc/3.x/api.html
+
+ $loader = new \Twig\Loader\FilesystemLoader('App/View');
+ $twig = new \Twig\Environment($loader, [
+ 'cache' => '/path/to/compilation_cache','auto_reload' => true
+  ]);
+ $template = $twig->load('Home.html');
+
+ return $template->render()
+
+9-passo: pronto todos os arquivos necessarios para comecar o projeto
+
+9.1-PRIMEIRO PASSO CRIAR AS PASTA MAIS OS ARQUIVOS
+PASTA - VIEW
+PASTA - TEMPLATE
+PASTA - CONTROLLER
+PASTA - CORE
+ARQUIVO INDEX - PRINCIPAL
+
+2- SEGUNDA FORMA DE CRIAR A ESTRUTURA 
+
+PASTA - CONTROLLER
+PASTA - VIEW
+PASTA - MODEL
+E OUTRAS 
+
+9.2-CRIAR TODA A ESTRUTURA FRONT END
+9.3-CRIAR TODOS OS ARQUIVOS QUE SERAM NECESSARIOS
+
+
+//CASO O COMPOSER NAO FUNCIONE
+php -r "readfile('https://getcomposer.org/installer');" | php
+
+
+-------------------------------------------------------------
+ if(empty ($dadosPost['email'] ) OR empty ($dadosPost['usuario'] ) ){
+             throw new Exception("Preencha todo os campos");
+             return false;
+         }
+
+
+         $con = Connection::getConn();
+
+         $sql = "INSERT INTO cadpessoa (nome, usuario, senha, email, RG, CPF, endereço, telefone, cidade, bairro, estado) VALUES (:nome, :usuario, :senha, :email, :RG, :CPF, :endereço, :telefone, :cidade, :bairro, :estado)";
+         $sql = $con->prepare($sql);
+         $sql->bindValue(":nome", $dadosPost['nome']);
+         $sql->bindValue(":usuario", $dadosPost['usuario']);
+         $sql->bindValue(":senha", $dadosPost['senha']);
+         $sql->bindValue(":email", $dadosPost['email']);
+         $sql->bindValue(":RG", $dadosPost['RG']);
+         $sql->bindValue(":CPF", $dadosPost['CPF']);
+         $sql->bindValue(":endereço", $dadosPost['endereço']);
+         $sql->bindValue(":telefone", $dadosPost['telefone']);
+         $sql->bindValue(":cidade", $dadosPost['cidade']);
+         $sql->bindValue(":bairro", $dadosPost['bairro']);
+         $res = $sql->execute();
+         var_dump($res);
+         
+
+         if($res == 0){
+             throw new Exception("FALHA AO INSERIR OS DADOS");
+             return false;
+         }   
+
+         return true;

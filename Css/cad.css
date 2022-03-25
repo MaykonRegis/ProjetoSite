@@ -1,0 +1,197 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Opens Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0,9;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+/*CABECALHO*/
+
+.cabecalho {
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.cabecalho img {
+    width: 100px;
+    border-radius: 25px;
+}
+
+.cabecalho ul {
+    display: flex;
+}
+
+.cabecalho li {
+    margin: 0 15px;
+}
+
+.cabecalho li a {
+    color: #F25757;
+}
+
+.cabecalho li a:hover {
+    border: 1px solid #F25757;
+    padding: 5px;
+}
+
+.cabecalho li:first-child {
+    margin-left: 0;
+}
+
+.cabecalho li:last-child {
+    margin-right: 0;
+}
+
+@media(max-width : 700px){
+    .cabecalho {
+        flex-direction: column;
+    }
+    .cabecalho img{
+        margin-bottom: 15px;
+    }
+}
+
+/*NEWSLLETER*/
+
+.secao1 {
+    background-image: url(../Imagens/golden.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+    opacity: 0.8;
+}
+
+.secao1 h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.secao1 h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.secao1 form {
+    display: flex;
+   flex-direction: column;
+
+}
+
+.secao1 input {
+    padding: 10px;
+    border: 1px solid #F25757;
+    border-radius: 4px;
+    width: 500px;
+    margin-bottom: 10px;
+    
+}
+
+.secao1 button {
+    padding: 10px;
+    background-color: #025951;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+   
+}
+
+.secao1 button:hover{
+    background-color: #F25757;
+}
+
+@media (max-width: 700px){
+    .secao1 input {
+        width: 400px;
+    }
+    .secao1 h1 {
+        font-size: 1.5rem;
+    }
+
+    .secao1 h2 {
+        font-size: 1.3rem;
+    }
+    .secao1 {
+        background-image: url(../Imagens//golden.jpg);
+        background-position: center;
+        transition: 1s;
+    }
+}
+
+
+/*RODAPE*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F25757;
+    padding: 50px 10px;
+}
+
+footer ul {
+    display: flex;
+    margin-bottom: 25px;
+    margin: auto;
+}
+
+footer ul li {
+    margin-right: 10px;
+}
+
+footer ul li:last-child{
+    margin-right: 0;
+}
+
+footer ul li:last-child{
+    margin-left: 0;
+}
+
+footer a {
+    color: #025951;
+    font-size: 2rem;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+   margin: auto;
+    
+}
+
+@media (max-width: 700px){
+    footer p {
+        margin-left: 15px;
+    }
+}

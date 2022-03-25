@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F25757;
+    
+    padding: 15px;
+}
+
+.principal h1 {
+    color: white;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.principal a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.principal a:hover{
+    background-color: burlywood;
+    color: white;
+}
+
+/*SEGUNDO CABECALHO*/
+
+.cabecalho {
+    position: absolute;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: #F25757;
+    transition: all .5s ease;
+}
+
+.cabecalho h1 {
+    font-size: 22px;
+    color: white;
+    margin-left: 20px;
+    line-height: 70px;
+}
+
+.cabecalho ul a{
+    display: block;
+    padding-left: 30px;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    
+    transition: .4s;
+}
+
+.cabecalho li {
+    border-top: 1px solid rgba(255, 255, 255,.3);
+}
+
+ul li:hover a {
+    padding-left: 50px;
+}
+
+@media(max-width: 700px){
+   .cabecalho {
+       width: 200px;
+   }
+}
+
+/*BOTOES*/
+
+#check {
+    display: none;
+}
+
+label #btn,label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #F25757;
+    border-radius: 3px;
+}
+
+label #btn {
+    left: 40px;
+    top: 100px;
+    font-size: 35px;
+    color: white;
+    padding: 5px;
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -199px;
+    top: 91px;
+    font-size: 30px;
+    color: white;
+    padding: 5px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .cabecalho {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+    left: 199px;
+  
+}
+
+@media(max-width: 700px){
+    label #cancel {
+        top: 119px;
+    }
+}
+
+/*CORPO*/
+
+section {
+    background: url(../Imagens/dash.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+}
+
+#check:checked ~ section {
+    margin-left: 166px;
+}
+
+
+@media(max-width: 700px){
+    section {
+        background-position: center;
+    }
+}
+
+
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F25757;
+    padding: 30px 10px;
+}
+
+footer ul {
+    display: flex;
+    margin-bottom: 25px;
+    margin: auto;
+}
+
+footer ul li {
+    margin-right: 10px;
+    list-style: none;
+}
+
+footer ul li:last-child{
+    margin-right: 0;
+}
+
+footer ul li:last-child{
+    margin-left: 0;
+}
+
+footer a {
+    color: #025951;
+    font-size: 2rem;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+   margin: auto;
+    
+}
+
+@media (max-width: 700px){
+    footer p {
+        margin-left: 15px;
+    }
+}

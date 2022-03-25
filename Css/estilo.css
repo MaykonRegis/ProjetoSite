@@ -1,0 +1,285 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Opens Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0,9;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+/*CABECALHO*/
+
+.cabecalho {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.cabecalho img {
+    width: 100px;
+    border-radius: 25px;
+}
+
+.cabecalho ul {
+    display: flex;
+}
+
+.cabecalho li {
+    margin: 0 15px;
+}
+
+.cabecalho li a {
+    color: #F25757;
+}
+
+.cabecalho li a:hover {
+    border: 1px solid #F25757;
+    padding: 5px;
+}
+
+.cabecalho li:first-child {
+    margin-left: 0;
+}
+
+.cabecalho li:last-child {
+    margin-right: 0;
+}
+
+@media(max-width : 700px){
+    .cabecalho {
+        flex-direction: column;
+    }
+    .cabecalho img{
+        margin-bottom: 15px;
+    }
+}
+
+/*SECAO 1*/
+
+.secao1 {
+    background-image: url(../Imagens/aviao.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 2s;
+}
+
+.secao1 h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.secao1 h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.secao1 .btn {
+    background-color: #fff;
+    border-radius: 4px;
+    color: #025951;
+    padding: 20px 50px;
+    text-transform: uppercase;
+}
+
+.secao1 .btn:hover {
+    background-color: #F25757;
+}
+
+@media (max-width: 700px){
+   .secao1 {
+       background-position: center;
+       transition: 2s;
+   }
+}
+
+/*CONHECA HOTEL*/
+
+.secao2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.secao2 h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+}
+
+.secao2 p {
+    max-width: 800px;
+    margin-bottom: 30px;
+    color: #025951;
+    text-align: center;
+}
+
+.secao2 hr{
+    width: 300px;
+    height: 2px;
+    background-color: #025951;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.secao2 .grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.secao2 .grid li {
+    height: 350px;
+    padding: 20px;
+    border-radius: 4px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.secao2 .grid li.small {
+    flex-basis: 40%;
+}
+
+.secao2 .grid li.large {
+    flex-basis: 60%;
+}
+
+@media (max-width: 700px){
+    .secao2 .grid li.small, .secao2 .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+/*INFORMACOES*/
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 50px;
+    background-color: #025951;
+}
+
+.informacoes h3 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #F25757;
+    text-align: center;  
+}
+
+.informacoes p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.informacoes hr {
+    width: 300px;
+    height: 2px;
+    background-color: #F25757;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.informacoes .grid {
+    width: 100%;
+    display: flex;
+}
+
+.informacoes li {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.informacoes li i {
+    color: #F25757;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.informacoes li h4 {
+    font-size: 1.5em;
+    color: #F25757;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 850px){
+    .informacoes .grid {
+        flex-direction: column;
+    }
+}
+
+/*RODAPE*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F25757;
+    padding: 50px 10px;
+}
+
+footer ul {
+    display: flex;
+    margin-bottom: 25px;
+    margin: auto;
+}
+
+footer ul li {
+    margin-right: 10px;
+}
+
+footer ul li:last-child{
+    margin-right: 0;
+}
+
+footer ul li:last-child{
+    margin-left: 0;
+}
+
+footer a {
+    color: #025951;
+    font-size: 2rem;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+   margin: auto;
+}
+
+@media (max-width: 700px){
+    footer p {
+        margin-left: 20px;
+    }
+}

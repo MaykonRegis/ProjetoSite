@@ -1,0 +1,190 @@
+<?php
+    // ----------------PASSO 1-----------------------
+    //1-CRIAR O CORE E SUA CLASSE
+    //2-CRIAR DOIS METODOS UM CONSTRUTOR E OUTRO START
+    //3-FAZER A INSTACIAÇÃO DA CLASSE CORE 
+      3.1- FAZER A CHAMADA DO CORE NO INDEX
+    //4-FAZER A CHAMADA DO METODO START COM O GET DENTRO DELE 
+    //5-COLOCAR O ARQUIVO DA URL AMIGAVEL DENTRO DO PROJETO
+    //6 DAR UM VARDAMPU NO REQUEST
+    //7-COM A FUNCAO EXPLODE EU QUEBRO A BARRA E TRANSFORMO NUM ARRAY
+
+    //CHAMADA NO INDEX
+    require_once 'App/Core/core.php';
+    require_once 'vendor/autoload.php';
+    $core = new Core;
+    echo $core->start($_GET);
+
+    Class Core {
+        private $url;
+
+
+        public function __construct(){
+
+        }
+
+        public function start($request){
+           // var_dump($request);
+           $this->url = explode('/', $request['url']); // FUNCAO PARA QUEBRAR 
+          // var_dump($this->url);
+        }
+    }
+
+?>
+
+//-------------------PASSO 2 ---------------------------
+    //8-DIGO QUE A CONTROLLER VAI SER IGUAL A URL NA POSICAO 0
+    //9-COLOCO UM ARRAY SHIFT PARA APAGAR A POSICAO
+    //10-CRIAR OS ATRIBUTOS CONTROLLER E METODO
+    //11-CRIAR OUTRO ATRIBUTO PARAMS
+    //12-DAR NOVAMENTE OUTRO ARRAY SHIFT
+    //13-DAR UM VARDAMPU EM TODAS AS ESSEÇOES
+
+
+    
+    Class Core {
+        private $url;
+        private $controller;
+        private $method;
+        private $params;
+
+        public function __construct(){
+
+        }
+
+        public function start($request){
+           // var_dump($request);
+           $this->url = explode('/', $request['url']);
+          // var_dump($this->url);
+
+          $this->cotroller = ucfirst($this->url[0]).'Controller';
+          array_shift($this->url);
+
+          $this->method = $this->url[0];
+          array_shift($this->url);
+
+          $this->params = $this->url;
+          var_dump($this->controller, $this->method, $this->params);
+        }
+    }
+
+
+
+//-------------------PASSO 3 ----------------------------------
+    //14-CRIAR UM IF PARA VERIFICAR SE TEM ALGUMA INFORMACAO NA URL
+    //15-DEFINIR O METHODO DE RETORNO E O CONTROLER DE RETORNO
+    //16-NO PARAMS DEIFNIR UM VALOR PADRAO 
+    //17-UTILIZANDO A FUNCAO CALL-USER-FUNCT PARA RETORNA A PAGINA
+    
+    Class Core {
+        private $url;
+        private $controller;
+        private $method;
+        private $params = array();
+
+        public function __construct(){
+
+        }
+
+        public function start($request){
+            if($request['url']){
+                // var_dump($request);
+                $this->url = explode('/', $request['url']);
+                // var_dump($this->url);
+ 
+                $this->cotroller = ucfirst($this->url[0]).'Controller';
+                array_shift($this->url);
+        
+                $this->method = $this->url[0];
+                array_shift($this->url);
+        
+                $this->params = $this->url;
+            }else {
+                $this->controller = 'HomeController';
+                $this->method = 'index';
+            }
+        call_user_func(array(new $this->controller, $this->method), $this->params);
+        var_dump($this->controller, $this->method, $this->params);
+        }
+    }
+
+ //-----------------------PASSO 4----------------------------------
+    //CRIAR UM IF PARA CASO NAO ESTEJA ACESSANDO NENHUMA PAGINA
+    //CASO NAO ESTEJA EM NENHUMA PAGINA RETORNA PARA O USUARIO UMA PAGINA
+    //19-COLOCAR UM ISSET NO PRIMEIRO IF
+    //- PARA CADA METODO CRIAR UM IF E COLOCAR ISSET ANTES
+    //- E CRIAR UM THIS URL	
+    //20-COLOCAR O RETURN NO CALL USE
+    //21-O ECHO COLOCA NA INDEX NO CORE->START
+    //22-COLOCAR OUTRO IF PRO METHOD E PARAMS
+    //23-NO ATRIBUTO METHOD COLOCAR UM VALOR PADRAO COMO INDEX
+
+    Class Core {
+        private $url;
+        private $controller;
+        private $method = 'index';
+        private $params = array();
+
+        public function __construct(){
+
+        }
+
+        public function start($request){
+            if(isset($request['url'])){
+                // var_dump($request);
+                $this->url = explode('/', $request['url']);
+                // var_dump($this->url);
+ 
+                $this->cotroller = ucfirst($this->url[0]).'Controller';
+                array_shift($this->url);
+        
+                if(isset($this->url[0]) && $this->url != ''){
+                    $this->method = $this->url[0];
+                    array_shift($this->url);
+
+                    if(isset($this->url[0]) && $this->url != ''){
+                        $this->params = $this->url;
+                    }
+                }
+    
+            }else {
+                $this->controller = 'HomeController';
+                $this->method = 'index';
+            }
+        return call_user_func(array(new $this->controller, $this->method), $this->params);
+        //var_dump($this->controller, $this->method, $this->params);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------
+NO ARQUIVO INDEX 
+
+1-CRIAR O SEGUINTE CODIGO NO INDEX PARA FAZER A CHAMADA DO TEMPLATE
+
+$template = file_get_contents('template/estrutura.html'); // CHAMDA DO TEMPLATE 
+$saida = ob_get_contents(); // COMANDO PARA ARMAZENA O CONTEUDO
+ob_end_clean();
+
+$tplpronto = str_replace('{{area_dinamica}}', $saida, $template); // COMANDI IRA EXIBIR O CONTEUDO NA AREA MARCADA NO TEMPLATE
+echo $tplpronto; // COMANDO PARA MOSTRAR A ESTRUTURA 
+
+2-CRIAR OS CONTROLLER DE CADA PAGINA E FAZER A CHAMADA 
+3-COLOCAR O TWIG NAS CONTROLLER E FAZER A CHAMADA DAS PAGINA 
+
+
+
+

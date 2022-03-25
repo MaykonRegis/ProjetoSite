@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+.login {
+    background: linear-gradient(to right, #F25757, #1C5C5D);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.form1 {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #F25757, #1C5C5D);
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow:  -20px 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form1 h3 {
+    font-family: 'New Tegomin', serif;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.form1 h2 {
+    font-family: serif;
+    font-size: 1.3rem;
+}
+
+
+.form2 {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #F25757, #1C5C5D);
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow:  -20px 20px 20px rgba(0, 0, 0, 0.3);
+    
+}
+
+.form2 form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 25px;
+}
+
+.form2 form h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 25px;
+    font-family: 'New Tegomin', serif;
+}
+
+.form2 form input {
+    border: none;
+    border-radius: 24px;
+    padding: 7px;
+    margin-bottom: 9px; 
+    border: 2px solid #1C5C5D;
+    outline: none;
+    transition: 0.25s;
+}
+
+.form2 form input:focus {
+    width: 300px;
+    border-color: white;
+}
+
+.form2 .btn {
+    color: #F25757;
+    cursor: pointer;
+}
+
+.form2 .btn:hover {
+    background-color: #1C5C5D;
+}
+
+.msg {
+    color: #ff6d6d;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.inscreva {
+    border: none;
+    border-radius: 24px;
+    padding: 7px;
+    margin-bottom: 9px; 
+    border: 2px solid #1C5C5D;
+    outline: none;
+    transition: 0.25s;
+    background-color: white;
+    color: tomato;
+}
+
+.inscreva:hover {
+    background-color: teal;
+}
+
+.btn-facebook {
+    width: 190px;
+    height: 40px;
+    background-color: #1877F2;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-facebook i {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+.btn-facebook a {
+    color: white;
+}
+
+@media (max-width:700px){
+    
+    .login {
+        flex-direction: column;
+    }
+
+    .form1 h3 {
+        margin-top: 205px;
+    }
+
+    .form2 form {
+        margin-bottom: 150px;
+    }
+    
+    
+}
